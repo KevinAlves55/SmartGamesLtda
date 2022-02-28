@@ -1,0 +1,37 @@
+// Paleta de cores
+$mainColor: #161349;
+$secondaryColor: #1B1553;
+$tertiaryColor: #9672FA;
+$quaternaryColor: #17144B;
+$neutra: #f1f1f1;
+$inputPesquisa: #1C1656;
+$iconsFundo: #C572FB;
+
+$size: (
+    
+    "titulo": 2.4rem,
+    "subTitulo": 1.9rem,
+    "grau1": 1.045rem,
+    "grau2": 1.5rem,
+    "grau3": 1.3rem,
+    "grau5": 0.9rem,
+    "grau6": 1.2rem,
+    "grau7": 1.1rem,
+    "grau8": 1rem,
+    "grau9": 0.8rem,
+    "grau10": 0.7rem
+
+);
+
+// Densidade da letra
+$densidade: (
+    
+    "regular": 300,
+    "medium": 400,
+    "bold": 500,
+    "extraBold": bold,
+
+);
+
+// Box-shadon
+$sombreamento: 10px 10px 10px rgba(0, 0, 0, 25%);

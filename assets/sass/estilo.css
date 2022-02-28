@@ -1,0 +1,657 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@200;300;400;500;600&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
+:target {
+  scroll-margin-top: 170px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  outline: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+h1 {
+  font-family: 'Righteous', cursive;
+}
+
+p {
+  line-height: 1.8;
+}
+
+input[type="text"]::-webkit-input-placeholder {
+  color: #b4b4b4;
+}
+
+input[type="text"]:-ms-input-placeholder {
+  color: #b4b4b4;
+}
+
+input[type="text"]::-ms-input-placeholder {
+  color: #b4b4b4;
+}
+
+input[type="text"]::placeholder {
+  color: #b4b4b4;
+}
+
+.estilizacao-botao {
+  height: 55px;
+  width: 200px;
+  border-radius: 30px;
+  background-color: #9672FA;
+  color: #f1f1f1;
+  font-weight: bold;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-top: 20px;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.estilizacao-botao:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  background-color: #161349;
+  gap: 35px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #00000090;
+  opacity: 0;
+  z-index: -1;
+}
+
+.modal-close {
+  display: block;
+  width: 30px;
+  height: 30px;
+  padding-top: 2px;
+  text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  background-color: #ff4949;
+  color: white;
+}
+
+.modal.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.modal-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+  width: 70vw;
+  margin: 15vh auto;
+  padding: 20px;
+  background-color: white;
+  -webkit-box-shadow: 1px 1px 10px black;
+          box-shadow: 1px 1px 10px black;
+  border-radius: 20px;
+}
+
+td {
+  text-align: center;
+  width: 200px;
+}
+
+header {
+  height: 100%;
+  width: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #17144B;
+  border-radius: 20px;
+  -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+          box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+}
+
+header #logo {
+  height: 110px;
+  width: 345px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header #logo img {
+  height: 100px;
+  width: 100px;
+  border-radius: 20px;
+  -webkit-transition: .5s;
+  transition: .5s;
+  cursor: pointer;
+}
+
+header #logo img:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+header #logo h1 {
+  color: #f1f1f1;
+  font-size: 2.4rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  letter-spacing: none;
+}
+
+header #logo .destaque {
+  color: #5846BD;
+}
+
+header #menu {
+  height: 435px;
+  width: 360px;
+  background-color: #1B1553;
+  margin-top: 25px;
+  border-radius: 20px;
+}
+
+header #menu ul {
+  height: 400px;
+  width: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+}
+
+header #menu ul li {
+  height: 90px;
+  width: 230px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+}
+
+header #menu ul li img {
+  height: 35px;
+  width: 35px;
+}
+
+header #menu ul li a {
+  color: #f1f1f1;
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  letter-spacing: none;
+}
+
+header #menu ul li a:hover {
+  text-decoration: underline;
+}
+
+header #conteudo-categorias {
+  height: 350px;
+  width: 350px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  background-color: #1B1553;
+  margin-top: 25px;
+  border-radius: 20px;
+}
+
+header #conteudo-categorias #opcoes {
+  height: 80px;
+  width: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header #conteudo-categorias #opcoes span {
+  color: #f1f1f1;
+  font-size: 1.045rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  letter-spacing: none;
+  cursor: pointer;
+}
+
+header #conteudo-categorias #galeria-icones {
+  height: 150px;
+  width: 200px;
+  -ms-flex-item-align: center;
+      align-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 15px;
+}
+
+header #conteudo-categorias #galeria-icones img {
+  height: 32px;
+  width: 32px;
+  -webkit-transition: .5s;
+  transition: .5s;
+  cursor: pointer;
+}
+
+header #conteudo-categorias #galeria-icones img:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+main {
+  height: 120vh;
+  width: 100%;
+}
+
+main #parte-superior {
+  height: 70px;
+  width: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main #parte-superior #corpo-pesquisa {
+  position: relative;
+}
+
+main #parte-superior #corpo-pesquisa #pesquisa {
+  height: 55px;
+  width: 250px;
+  border-radius: 6px;
+  border: none;
+  background-color: #1C1656;
+  -webkit-box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.171);
+          box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.171);
+  padding: 0 20px;
+  color: #f1f1f1;
+  font-size: 0.9rem;
+}
+
+main #parte-superior #corpo-pesquisa img {
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  right: 10px;
+  top: 15px;
+}
+
+main #parte-superior #interacao {
+  height: inherit;
+  width: 255px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+}
+
+main #parte-superior #interacao .circulo-destaque-interacao {
+  height: 40px;
+  width: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 50%;
+  background-color: #C572FB;
+  border: none;
+}
+
+main #parte-superior #interacao .circulo-destaque-interacao:hover {
+  background-color: #5846BD;
+}
+
+main #parte-superior #interacao .circulo-destaque-interacao img {
+  height: 25px;
+  width: 25px;
+  cursor: pointer;
+}
+
+main #parte-superior #interacao #login {
+  height: 40px;
+  width: 110px;
+  border-radius: 30px;
+  background-color: #C572FB;
+  color: #f1f1f1;
+  font-weight: bold;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+main #parte-superior #interacao #login:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: .5s;
+  transition: .5s;
+  background-color: #5846BD;
+}
+
+main #banner {
+  height: 280px;
+  width: inherit;
+  background-color: #0F103D;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 20px;
+  position: relative;
+}
+
+main #banner h2 {
+  position: absolute;
+  top: 100px;
+  left: 265px;
+  color: #f1f1f1;
+  font-size: 2.4rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  letter-spacing: none;
+}
+
+main #banner span {
+  position: absolute;
+  top: 155px;
+  left: 310px;
+  color: #f1f1f1;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  letter-spacing: none;
+  text-align: center;
+}
+
+main #banner #banner-imagem {
+  height: 250px;
+  width: inherit;
+  border-radius: 20px;
+  background-image: url(../img/fundo.jpg);
+  background-position: center;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.445);
+  background-blend-mode: darken;
+}
+
+main #jogos {
+  height: auto;
+  width: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  min-height: 400px;
+  margin-top: 20px;
+  background-color: #1B1553;
+  border-radius: 20px;
+  padding: 15px;
+}
+
+main #jogos h2 {
+  color: #f1f1f1;
+  font-size: 1.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: none;
+  margin-bottom: 25px;
+  margin-left: 16px;
+  border-bottom: 2px solid #f1f1f1;
+}
+
+main #jogos #corpo-card {
+  height: auto;
+  width: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 5px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main #jogos .card {
+  height: 350px;
+  width: 170px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 15px;
+}
+
+main #jogos .card img {
+  height: 180px;
+  width: 140px;
+  border-radius: 8px;
+}
+
+main #jogos .card h3 {
+  color: #f1f1f1;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  letter-spacing: none;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+main #jogos .card span {
+  color: #f1f1f1;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+main #jogos .card .btn {
+  height: 40px;
+  width: 120px;
+  border-radius: 3px;
+  background-color: #C572FB;
+  color: #f1f1f1;
+  font-weight: medium;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+main #jogos .card .btn:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: .5s;
+  transition: .5s;
+  background-color: #5846BD;
+}
+/*# sourceMappingURL=estilo.css.map */

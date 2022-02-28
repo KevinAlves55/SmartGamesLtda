@@ -1,0 +1,344 @@
+@import 'variaveis';
+@import 'mixins';
+@import 'resert';
+@import 'button';
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@200;300;400;500;600&display=swap');
+
+body {
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    padding: 20px;
+    @include displayFlex();
+    background-color: $mainColor;
+    gap: 35px;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #00000090;
+    opacity: 0;
+    z-index: -1;
+}
+
+.modal-close {
+    display: block;
+    width: 30px;
+    height: 30px;
+    padding-top: 2px;
+    text-align: center;
+    user-select: none;
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    background-color: #ff4949;
+    color: white;
+}
+
+.modal.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 70vw;
+    margin: 15vh auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 1px 1px 10px black;
+    border-radius: 20px;
+}
+
+td {
+    text-align: center;
+    width: 200px;
+}
+
+header {
+    @include tamanho(100%, 400px);
+    @include displayFlex(column, $align: center);
+    background-color: $quaternaryColor;
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+
+
+    #logo {
+        @include tamanho(110px, 345px);
+        @include displayFlex($justify: space-between, $align: center);
+
+        img {
+            @include tamanho(100px, 100px);
+            border-radius: 20px;
+            transition: .5s;
+            cursor: pointer;
+
+            &:hover {
+                transform: scale(1.1);
+                transition: .5s;
+            }
+        }
+
+        h1 {
+            @include textoEstilo(titulo, bold, $case: capitalize);
+        }
+
+        .destaque {
+            color: #5846BD;
+        }
+
+    }
+
+    #menu {
+        @include tamanho(435px, 360px);
+        background-color: $secondaryColor;
+        margin-top: 25px;
+        border-radius: 20px;
+
+        ul {
+            @include tamanho(400px, inherit);
+            @include displayFlex(column, center, center);
+            gap: 15px;
+
+            li {
+                @include tamanho(90px, 230px);
+                @include displayFlex(row, $align: center);
+                gap: 8px;
+
+                img {
+                    @include tamanho(35px, 35px);
+                }
+
+                a {
+                    @include textoEstilo(grau2, $cor: $neutra, $case: capitalize);
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+
+            }
+        }
+    }
+
+    #conteudo-categorias {
+        @include tamanho(350px, 350px);
+        @include displayFlex(column);
+        background-color: $secondaryColor;
+        margin-top: 25px;
+        border-radius: 20px;
+
+        #opcoes {
+            @include tamanho(80px, inherit);
+            @include displayFlex($justify: space-around, $align: center);
+
+            span {
+                @include textoEstilo(grau1, extraBold, $neutra, capitalize);
+                cursor: pointer;
+            }
+        }
+
+        #galeria-icones {
+            @include tamanho(150px, 200px);
+            align-self: center;
+            @include displayFlex(column, center, center);
+            flex-wrap: wrap;
+            gap: 15px;
+
+            img {
+                @include tamanho(32px, 32px);
+                transition: .5s;
+                cursor: pointer;
+
+                &:hover {
+                    transform: scale(1.1);
+                    transition: .5s;
+                }
+            }
+        }
+
+    }
+}
+
+main {
+    @include tamanho(120vh, 100%);
+
+    #parte-superior {
+        @include tamanho(70px, inherit);
+        @include displayFlex($justify: space-between, $align: center);
+
+        #corpo-pesquisa {
+            position: relative;
+
+            #pesquisa {
+                @include tamanho(55px, 250px);
+                border-radius: 6px;
+                border: none;
+                background-color: $inputPesquisa;
+                box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.171);
+                padding: 0 20px;
+                color: $neutra;
+                font-size: 0.9rem;
+            }
+
+            img {
+                @include tamanho(25px, 25px);
+                position: absolute;
+                right: 10px;
+                top: 15px;
+            }
+        }
+
+        #interacao {
+            @include tamanho(inherit, 255px);
+            @include displayFlex($justify: space-between, $align: center);
+            gap: 8px;
+
+            .circulo-destaque-interacao {
+                @include tamanho(40px, 40px);
+                @include displayFlex($justify: center, $align:center);
+                border-radius: 50%;
+                background-color: $iconsFundo;
+                border: none;
+
+                &:hover {
+                    background-color: #5846BD;
+                }
+
+                img {
+                    @include tamanho(25px, 25px);
+                    cursor: pointer;
+                }
+            }
+
+            #login {
+                @include tamanho(40px, 110px);
+                border-radius: 30px;
+                background-color: $iconsFundo;
+                color: $neutra;
+                font-weight: bold;
+                align-self: center;
+                font-size: 1.1rem;
+                border: none;
+                cursor: pointer;
+                transition: .5s;
+
+                &:hover {
+                    transform: scale(1.1);
+                    transition: .5s;
+                    background-color: #5846BD;
+                }
+            }
+        }
+    }
+
+    #banner {
+        @include tamanho(280px, inherit);
+        background-color: #0F103D;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 15px;
+        border-radius: 20px;
+        position: relative;
+
+        h2 {
+            position: absolute;
+            top: 100px;
+            left: 265px;
+            @include textoEstilo(titulo, extraBold, $case: capitalize);
+        }
+
+        span {
+            position: absolute;
+            top: 155px;
+            left: 310px;
+            @include textoEstilo(grau6, bold, $case: capitalize);
+            text-align: center;
+        }
+
+        #banner-imagem {
+            @include tamanho(250px, inherit);
+            border-radius: 20px;
+            background-image: url(../img/fundo.jpg);
+            background-position: center;
+            background-size: cover;
+            background-color: rgba(0, 0, 0, 0.445);
+            background-blend-mode: darken;
+        }
+    }
+
+    #jogos {
+        @include tamanho(auto, inherit);
+        @include displayFlex(column);
+        min-height: 400px;
+        margin-top: 20px;
+        background-color: $secondaryColor;
+        border-radius: 20px;
+        padding: 15px;
+
+        h2 {
+            @include textoEstilo(subTitulo, bold, $case: uppercase);
+            margin-bottom: 25px;
+            margin-left: 16px;
+            border-bottom: 2px solid $neutra;
+        }
+
+        #corpo-card {
+            @include tamanho(auto, inherit);
+            @include displayFlex(row, space-between);
+            gap: 5px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            @include tamanho(350px, 170px);
+            @include displayFlex(column, $align: center);
+            margin-bottom: 15px;
+
+            img {
+                @include tamanho(180px, 140px);
+                border-radius: 8px;
+            }
+
+            h3 {
+                @include textoEstilo(grau5, bold, $case: capitalize);
+                margin-top: 15px;
+                margin-bottom: 15px;
+                text-align: center;
+            }
+
+            span {
+                color: $neutra;
+                font-weight: bold;
+                margin-bottom: 8px;
+            }
+
+            .btn {
+                @include tamanho(40px, 120px);
+                border-radius: 3px;
+                background-color: $iconsFundo;
+                color: $neutra;
+                font-weight: medium;
+                align-self: center;
+                font-size: 1rem;
+                border: none;
+                cursor: pointer;
+                transition: .5s;
+
+                &:hover {
+                    transform: scale(1.1);
+                    transition: .5s;
+                    background-color: #5846BD;
+                }
+            }
+        }
+    }
+}
